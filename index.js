@@ -39,7 +39,7 @@ class QuestionGame {
     currentQuestion = null
     questionData = []
     one_question_point = 0
-
+    incrementSuccess= 0
     constructor(data) {
         this.questionData = data
         this.one_question_point = Math.round(100 / this.questionData.length)
@@ -55,13 +55,13 @@ class QuestionGame {
             const questionItem = this.questionData[this.qIndex];
             this.currentQuestion = questionItem;
             game_over_message.style.display = "none"
+            this.incrementSuccess = this.incrementSuccess + this.one_question_point
             return questionItem;
         }
     }
 
     incrementPoint() {
         this.score = this.score + this.one_question_point
-        console.log(this.score,'this.score')
         return this.score
     }
 
@@ -86,10 +86,10 @@ function startGame() {
 startGame();
 
 function selectItem(userChoose) {
+    progress_bar.style.width = `${gameQ.incrementSuccess}%`
     if (userChoose === gameQ.currentQuestion.trueAnswer) {
         let incrementPoint = gameQ.incrementPoint()
         score.innerHTML = incrementPoint
-        progress_bar.style.width = `${incrementPoint}%`
         questionBg.classList.add("bg-success")
         questionBg.classList.remove("bg-warning")
         questionBg.classList.remove("bg-danger")
