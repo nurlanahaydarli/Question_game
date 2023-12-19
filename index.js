@@ -1,38 +1,28 @@
 const questions = [
     {
-        title: "Question 1",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Who sang the title song for the latest Bond film, No Time to Die?",
+        trueAnswer: "Billie Eilish",
+        variants: ["Adele", "Sam Smith", "Billie Eilish"],
     },
     {
-        title: "Question 2",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Which flies a green, white, and orange (in that order) tricolor flag? ",
+        trueAnswer: "Ireland",
+        variants: ["Ireland", "Ivory Coast", "Italy"],
     },
     {
-        title: "Question 3",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "What company makes the Xperia model of smartphone?",
+        trueAnswer: "Sony",
+        variants: ["Samsung", "Sony", "Nokia"],
     },
     {
-        title: "Question 4",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Which city is home to the Brandenburg Gate?",
+        trueAnswer: "Berlin",
+        variants: ["Vienna", "Zurich", "Berlin"],
     },
     {
-        title: "Question 5",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
-    },
-    {
-        title: "Question 6",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
-    },
-    {
-        title: "Question 7",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
+        title: " Where was the first example of paper money used?",
+        trueAnswer: "China",
+        variants: ["China", "Turkey", "Greece"],
     },
 ];
 const qTitle = document.querySelector("#qTitle");
@@ -88,7 +78,7 @@ function startGame() {
     btnGroup.innerHTML = qObj.variants
         .map(
             (item, index) =>
-                `<button class="btn btn-outline-light"  onclick="selectItem('${item}')">${index}. ${item}</button>`
+                `<button class="btn btn-outline-light"  onclick="selectItem('${item}')">${index+1}. ${item}</button>`
         )
         .join("");
 }
